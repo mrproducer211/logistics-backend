@@ -8,6 +8,7 @@ from models.shipment import db, Shipment
 from models.status_log import StatusLog
 from routes.shipments import shipment_bp
 from routes.status import status_bp
+from routes.users import user_bp
 from content.routes import content_bp
 
 app = Flask(__name__)
@@ -24,6 +25,7 @@ db.init_app(app)
 # Register blueprints
 app.register_blueprint(shipment_bp, url_prefix='/api/shipments')
 app.register_blueprint(status_bp, url_prefix='/api/shipments')
+app.register_blueprint(user_bp)
 app.register_blueprint(content_bp)
 
 @app.route('/')
