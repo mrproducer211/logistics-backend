@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Shipment Form</title>
+</head>
+<body>
+  <h2>Register Shipment</h2>
+  <form onsubmit="submitForm(event)">
+    <label>Sender Name: <input type="text" id="sender_name" value="Ken" /></label><br />
+    <label>Sender Email: <input type="email" id="sender_email" value="ken@example.com" /></label><br />
+    <label>Sender Phone: <input type="text" id="sender_phone" value="1234567890" /></label><br />
+    <label>Sender Address: <input type="text" id="sender_address" value="Bangkok, Thailand" /></label><br />
+    <label>Receiver Name: <input type="text" id="receiver_name" value="John" /></label><br />
+    <label>Receiver Phone: <input type="text" id="receiver_phone" value="0987654321" /></label><br />
+    <label>Receiver Address: <input type="text" id="receiver_address" value="Chiang Mai, Thailand" /></label><br />
+    <label>Package Type: <input type="text" id="package_type" value="Box" /></label><br />
+    <label>Weight: <input type="number" id="weight" value="2.5" step="0.1" /></label><br />
+    <label>Shipment Cost: <input type="number" id="shipment_cost" value="150.00" step="0.01" /></label><br />
+    <button type="submit">Submit Shipment</button>
+  </form>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function submitForm(event) {
+      event.preventDefault();
+
+      const data = {
+        sender_name: document.getElementById('sender_name').value,
+        sender_email: document.getElementById('sender_email').value,
+        sender_phone: document.getElementById('sender_phone').value,
+        sender_address: document.getElementById('sender_address').value,
+        receiver_name: document.getElementById('receiver_name').value,
+        receiver_phone: document.getElementById('receiver_phone').value,
+        receiver_address: document.getElementById('receiver_address').value,
+        package_type: document.getElementById('package_type').value,
+        weight: parseFloat(document.getElementById('weight').value),
+        shipment_cost: parseFloat(document.getElementById('shipment_cost').value)
+      };
+
+      const response = await fetch('http://127.0.0.1:5000/api/shipments/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+    }
+  </script>
+</body>
+</html>

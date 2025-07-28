@@ -1,0 +1,32 @@
+[
+  {
+    "section": "hero",
+    "heading": "Track Your Shipmednt With Ease",
+    "subheading": "<p>Fast. Reliable. Secure.</p>",
+    "image_url": "/images/hero.jpg"
+  },
+  {
+    "section": "footer",
+    "heading": "© 2025 Logistics Co.",
+    "subheading": "<p>All rights reserved.</p>",
+    "image_url": ""
+  },
+  {
+    "section": "about",
+    "heading": "About Our Services",
+    "subheading": "<p>We provide reliable logistics solutions across Thailand</p>",
+    "image_url": "/images/about.jpg"
+  },
+  {
+    "section": "contact",
+    "heading": "Contact Us",
+    "subheading": "<p>Get in touch for your shipping needs</p>",
+    "image_url": "/images/contact.jpg"
+  },
+  {
+    "section": "Head",
+    "heading": "Heading Test",
+    "subheading": "",
+    "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Fmoney%2FGoogle-Inc&psig=AOvVaw1YgqdlAiORLG-4f0oPNaVa&ust=1753708747893000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNj8oK2Q3Y4DFQAAAAAdAAAAABAE"
+  }
+]
